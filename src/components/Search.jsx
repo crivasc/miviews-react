@@ -1,13 +1,16 @@
 import styles from './Search.module.scss';
-import {useHistory} from 'react-router';
+import {useNavigate} from 'react-router';
 import { FaSearch } from "react-icons/fa";
-import { useQuery } from '../hooks/useQuery';
+//import { useQuery } from '../hooks/useQuery';
+import { useSearchParams } from 'react-router-dom';
 
 export const Search=()=> {
-    const query = useQuery();
+    //este se utiliza e la version 5 de react-router-dom
+    //const query = useQuery();
+    const [query, setQuery] = useSearchParams();
     const search = query.get('search');
 
-    const history = useHistory();
+    ///const navigate = useNavigate();
 
     const handleSubmit =(e)=>{
         e.preventDefault();
@@ -23,7 +26,8 @@ export const Search=()=> {
                     aria-label='Search Movies'
                     onChange={(e) => {
                         const value = e.target.value;
-                        history.push('/?search=' + value);
+                        setQuery({search:value})
+                        //navigate('/?search=' + value);
                     }}/>
                 <FaSearch className={styles.searchButton} color='black' size={20}/> 
             </div>
