@@ -1,5 +1,5 @@
 import styles from './Search.module.scss';
-import {useNavigate} from 'react-router';
+//import {useNavigate} from 'react-router';
 import { FaSearch } from "react-icons/fa";
 //import { useQuery } from '../hooks/useQuery';
 import { useSearchParams } from 'react-router-dom';
