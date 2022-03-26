@@ -1,4 +1,3 @@
-import { MoviesGrid } from "./components/MoviesGrid"
 import styles from './components/App.module.scss'
 import {
     BrowserRouter as Router,
